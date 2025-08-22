@@ -1,0 +1,39 @@
+Authentic Me - Identity Verification Application
+Overview
+Authentic Me is an identity verification application that allows users to prove ownership of their social media accounts and create a trusted public profile.
+
+Authentication
+Users sign in using Internet Identity (ICP WebAuthn)
+Authentication is required to access all features
+Core Features
+Account Linking and Verification
+Users can link Twitter and GitHub accounts to their identity
+Verification process involves issuing a one-time verification code that users must post:
+Twitter: Post the code in their profile bio or as a tweet
+GitHub: Create a public Gist containing the verification code
+Users submit the verification code and platform details for validation
+System validates the verification by checking the posted code on the respective platform
+Identity Storage
+Backend stores immutable proofs of verification for each user
+Each verification proof includes:
+Platform name (Twitter/GitHub)
+Account username/handle
+Verification timestamp
+Verification status
+Verification proofs are permanently stored and cannot be modified once confirmed
+Public Profiles
+Each user has a public profile page displaying all their verified accounts
+Public profiles show:
+List of verified social accounts with platform and username
+Verification timestamps
+Current verification status
+Profiles are accessible via a unique user identifier
+Public Query System
+Anyone can search and view public profiles without authentication
+Users can query profiles by Internet Identity principal or username
+Public API allows external applications to verify account authenticity
+Backend Data Storage
+User profiles with linked Internet Identity principals
+Verification challenges and their status
+Immutable verification proofs for each successfully verified account
+Public profile data for query access
